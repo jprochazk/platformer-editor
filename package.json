@@ -5,11 +5,7 @@
     "main": "main.js",
     "scripts": {
         "dev": "node dev.js",
-        "build": "webpack --config webpack.prod.js",
-        "start": "electron .",
-        "pack": "electron-builder --dir",
-        "dist": "electron-builder",
-        "postinstall": "electron-builder install-app-deps"
+        "build": "webpack --config webpack.prod.js"
     },
     "devDependencies": {
         "@types/jest": "^26.0.13",

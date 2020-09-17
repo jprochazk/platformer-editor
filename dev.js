@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
-/*
-Webpack doesn't play well with electron, so I'm doing this instead.
-All this does is run the TypeScript compiler in watch mode, and then starts Electron.
-*/
+/* All this does is run Webpack and Electron in parallel by spawning shell processes, and piping the output. */
 
 const { exec } = require("child_process");
 
@@ -25,12 +22,11 @@ function shell(cmd, silent = false) {
 }
 
 (async function () {
-    /* Run tsc in watch mode together with electron */
+    /* Run webpack in watch mode together with electron */
     try {
         process.env.ELECTRON_START_URL = "http://localhost:8080";
         process.env.NODE_ENV = "development";
         await Promise.all([
-            shell(`npx tsc -w --noEmit`, true),
             shell(`npx webpack-dev-server --config webpack.dev.js`, false),
             shell(`npx electron .`, true),
         ]);
