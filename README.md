@@ -1,6 +1,20 @@
 # platformer-editor
 
-Editor for my online game project, written in TypeScript, HTML and CSS.
+Editor for my online game project, written in TypeScript, HTML and CSS, running in Electron.
+
+### Usage
+
+**npm:**
+```
+> npm install
+> npm run dev
+```
+
+**yarn:**
+```
+> yarn install
+> yarn dev
+```
 
 ### Features
 
