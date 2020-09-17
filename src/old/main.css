@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+}
+.text.bold {
+    font-weight: bold;
+}
+.text.large {
+    font-size: 72px;
+}
+.text.medium {
+    font-size: 36px;
+}
+.text.regular {
+    font-size: 18px;
+}
+.text.small {
+    font-size: 12px;
+}

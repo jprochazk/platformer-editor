@@ -1,0 +1,9 @@
+node_modules
+dist
+
+webpack.*
+
+jest.config.js
+.eslintrc.js
+dev.js
+main.js

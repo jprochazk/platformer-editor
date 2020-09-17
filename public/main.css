@@ -1,0 +1,352 @@
+/* common */
+
+/* from https://stackoverflow.com/a/4407335/11953579 */
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.hide {
+    display: none;
+}
+
+html,
+body {
+    background: black;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* canvas */
+
+canvas#game {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    touch-action: none;
+}
+
+div.container {
+    /*display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;*/
+}
+
+/* toolbar */
+
+#toolbar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: none;
+    border-radius: 8px;
+    padding: 8px 8px 8px 8px;
+    top: 16px;
+    left: 16px;
+    width: 64px;
+    height: auto;
+    background: #292a2d;
+}
+
+.menu-button {
+    background: #d0d0d0;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    margin: 4px 0px 4px 0px;
+    opacity: 50%;
+}
+
+.menu-button:hover {
+    cursor: pointer;
+    opacity: 100%;
+}
+
+.menu-button.selected {
+    background: #11f0f0;
+}
+
+.menu-button-icon {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+}
+
+/* Alert */
+
+.alert-container {
+    display: flex;
+    flex-direction: column-reverse;
+
+    position: absolute;
+    bottom: 70px;
+    right: 120px;
+}
+
+.alert {
+    font-family: "Arial";
+
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+    width: auto;
+    height: auto;
+
+    opacity: 100%;
+
+    transition: opacity 1s ease;
+}
+
+.alert.inactive {
+    opacity: 0%;
+}
+
+.alert.error {
+    color: #721c24;
+    background: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert.info {
+    color: #004085;
+    background: #cce5ff;
+    border-color: #b8daff;
+}
+
+.alert.warn {
+    color: #856404;
+    background: #fff3cd;
+    border-color: #ffeeba;
+}
+
+/* Context menu */
+
+.context-menu {
+    position: absolute;
+
+    display: none;
+}
+
+.context-menu a {
+    cursor: pointer;
+}
+
+.context-menu ul,
+#context-menu li {
+    list-style: none;
+    margin: 0;
+    padding: 3px 0 3px 0;
+    background: #292a2d;
+}
+
+.context-menu li.divisor {
+    border-bottom: solid 1px #3c4043;
+}
+.context-menu li:last-child {
+    border: none;
+}
+.context-menu li a {
+    font-family: "Arial", sans-serif;
+    font-weight: lighter;
+    font-size: 12px;
+    display: block;
+    padding: 5px 10px 5px 20px;
+    text-decoration: none;
+    color: #e8eaed;
+}
+.context-menu li a:hover {
+    background: #4b4c4f;
+    color: #e8eaed;
+}
+
+/* Confirm dialog */
+
+.confirm-dialog {
+    padding: 5px 2px 5px 2px;
+    background: #292a2d;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: auto;
+    height: auto;
+
+    display: none;
+    flex-direction: row;
+}
+
+.confirm-dialog button {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 16px;
+    border: none;
+    padding: 5px;
+    margin: 0 2px 0 2px;
+    width: fit-content;
+    text-align: center;
+    opacity: 50%;
+    background: #d0d0d0;
+}
+
+.confirm-dialog button:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+/* Entity create window */
+
+div.entity {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 250px;
+    width: auto;
+    min-height: 300px;
+    height: auto;
+    background: #292a2d;
+
+    display: flex;
+    flex-direction: column;
+}
+div.entity > * {
+    font-family: "Arial";
+    font-size: 16px;
+    color: #d0d0d0;
+    border: none;
+}
+
+div.entity select {
+    font-family: "Arial";
+    font-size: 16px;
+    color: #d0d0d0;
+
+    margin: 20px auto 5px auto;
+    padding: 5px;
+    width: 200px;
+    background: #4b4c4f;
+    border: none;
+}
+
+div.entity select option {
+    font-family: "Arial";
+    font-size: 16px;
+    color: #d0d0d0;
+    border: none;
+}
+
+div.entity form.properties {
+    margin: 20px auto 20px auto;
+    text-align: left;
+    padding-left: 20px;
+}
+form.properties label {
+    display: inline-grid;
+    grid-template-rows: 70%;
+    grid-template-columns: 40% 60%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+label input {
+    color: #1f1f22;
+    margin: 5px 5px 5px 20px;
+}
+label input[type="text"],
+label input[type="range"],
+label input[type="number"] {
+    margin: auto;
+    width: 80%;
+}
+
+label input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+span.checkbox {
+    padding: 0;
+    margin: 5px 0px 5px 20px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    background: #4b4c4f;
+}
+span.checkbox:after {
+    content: "";
+    position: relative;
+    display: none;
+}
+span.checkbox:hover {
+    background: #93959b;
+}
+input[type="checkbox"]:checked ~ .checkbox {
+    background: #4b62a7;
+}
+input[type="checkbox"]:checked ~ .checkbox:after {
+    display: block;
+}
+.checkbox:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+div.entity div.confirm {
+    width: auto;
+    height: auto;
+    margin: 5px auto 20px auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+div.entity div.confirm button {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 16px;
+    border: none;
+    padding: 5px;
+    margin: 0 5px 0 5px;
+    width: fit-content;
+    text-align: center;
+
+    color: #d0d0d0;
+    background: #4b4c4f;
+}
+
+div.entity div.confirm button:hover {
+    background: #4b62a7;
+    cursor: pointer;
+}

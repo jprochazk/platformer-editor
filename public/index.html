@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <title>2D prototype</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link
+            href="./main.css"
+            media="screen"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </head>
+    <body class="noselect">
+        <div class="container" id="game">
+            <canvas id="game" tabindex="0" autofocus>
+                Your browser does not support HTML5 canvas!
+            </canvas>
+        </div>
+        <div class="container" id="toolbar">
+            <button class="menu-button" id="menu" type="button">
+                <img
+                    class="menu-button-icon"
+                    src="./assets/icon/open-menu.png"
+                />
+            </button>
+            <br />
+            <button class="menu-button" id="document" type="button">
+                <img
+                    class="menu-button-icon"
+                    src="./assets/icon/document.png"
+                />
+            </button>
+            <button class="menu-button" id="save" type="button">
+                <img
+                    class="menu-button-icon"
+                    src="./assets/icon/download.png"
+                />
+            </button>
+            <button class="menu-button" id="load" type="button">
+                <img class="menu-button-icon" src="./assets/icon/folder.png" />
+            </button>
+            <br />
+            <button class="menu-button" id="create" type="button">
+                <img class="menu-button-icon" src="./assets/icon/plus.png" />
+            </button>
+            <button class="menu-button" id="delete" type="button">
+                <img class="menu-button-icon" src="./assets/icon/delete.png" />
+            </button>
+            <br />
+            <button class="menu-button" id="translate" type="button">
+                <img
+                    class="menu-button-icon"
+                    src="./assets/icon/translate.png"
+                />
+            </button>
+            <button class="menu-button" id="rotate" type="button">
+                <img class="menu-button-icon" src="./assets/icon/rotate.png" />
+            </button>
+            <button class="menu-button" id="scale" type="button">
+                <img class="menu-button-icon" src="./assets/icon/scale.png" />
+            </button>
+            <button class="menu-button" id="polygon" type="button">
+                <img class="menu-button-icon" src="./assets/icon/polygon.png" />
+            </button>
+        </div>
+        <script src="./main.bundle.js"></script>
+        <noscript>
+            This page depends on JavaScript being enabled. Please enable it to
+            see the content of this page.
+        </noscript>
+    </body>
+</html>
